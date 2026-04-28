@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>StoryTelling | OLED Market Opportunity</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images/PowerIcon.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0a3d62;
+      padding: 15px 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 16px;
+      transition: all 0.25s ease-in-out;
+      border-radius: 30px;
+      font-weight: 500;
+      position: relative;
+      background: transparent;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-links a.active {
+      background: #60a3bc;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: width 0.2s;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      flex: 1;
+    }
+
+    /* Storyboard Grid - 3x2 = 6 blocks */
+    .storyboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Story Card - Pale Yellow background, black text, NO left border */
+    .story-card {
+      background: #fef9e6;
+      border-radius: 0px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #000000;
+    }
+
+    .story-card h3 i {
+      color: inherit;
+    }
+
+    .story-card p {
+      color: #000000;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .story-card ul {
+      margin-top: 0.8rem;
+      padding-left: 1.2rem;
+      color: #000000;
+      font-size: 0.85rem;
+    }
+
+    .story-card li {
+      margin-bottom: 0.4rem;
+      color: #000000;
+    }
+
+    /* Before/After inline comparison */
+    .comparison-inline {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+    .before-stat, .after-stat {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 0.8rem;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    .before-stat .stat-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ef4444;
+    }
+    .after-stat .stat-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #10b981;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: #475569;
+    }
+
+    /* Chart Section */
+    .chart-section {
+      background: white;
+      border-radius: 0px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .chart-header {
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      text-align: left;
+    }
+
+    .chart-title h2 {
+      color: #1e3a8a;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chart-title p {
+      color: #64748b;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .responsive-svg-container {
+      width: 100%;
+      min-height: 500px;
+    }
+
+    footer {
+      text-align: center;
+      background: #0a3d62;
+      color: white;
+      padding: 15px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 900px) {
+      .storyboard {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .storyboard {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .comparison-inline {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo" onclick="goHome()" title="Go to Home">
+    <img src="images/PowerIcon.png" alt="Power Logo">
+    <span class="logo-text">Energy Appliances</span>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="televisions.html">Televisions</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="storytelling.html" class="active">StoryTelling</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  
+  <!-- 6-BLOCK STORYBOARD - Pale Yellow background, no left border -->
+  <div class="storyboard">
+    
+    <!-- Block 1: Issue -->
+    <div class="story-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Issue</h3>
+      <p>Limited variety of TV screen technologies in the Australian market, especially for OLED.</p>
+    </div>
+
+
+    <!-- Block 2: Demonstrate Issue -->
+    <div class="story-card">
+        <h3><i class="fas fa-chart-area"></i>Demonstrate Issue</h3>
+      <ul>
+        <li>LED: 167 models</li>
+        <li>LCD: 115 models</li>
+        <li>OLED: 10 models</li>
+      </ul>
+    </div>
+    <!-- Block 3: Ideas for Overcoming -->
+    <div class="story-card">
+      <h3><i class="fas fa-chart-area"></i> Ideas for Overcoming</h3>
+      <ul>
+        <li>Encourage production of more OLED models</li>
+        <li>Introduce mid-range OLED options</li>
+        <li>Increase consumer awareness of OLED benefits</li>
+      </ul>
+    </div>
+
+    <!-- Block 4: Pilot Program -->
+    <div class="story-card">
+      <h3><i class="fas fa-rocket"></i> Pilot Program</h3>
+      <p><strong>Goals:</strong></p>
+      <ul>
+        <li>Stock more OLED models</li>
+        <li>Offer discounts or promotions</li>
+        <li>Educate customers in-store</li>
+      </ul>
+    </div>
+
+    <!-- Block 5: Before & After Data -->
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Before and After Data</h3>
+      <div class="comparison-inline">
+        <div class="before-stat">
+          <div class="stat-value">10 models</div>
+          <div class="stat-label">OLED models (Before)</div>
+          <div class="stat-value" style="font-size: 1rem; margin-top: 8px;">Low sales</div>
+        </div>
+        <div class="after-stat">
+          <div class="stat-value">+35 models</div>
+          <div class="stat-label">OLED models (After)</div>
+          <div class="stat-value" style="font-size: 1rem; margin-top: 8px;">+78 percent sales</div>
+        </div>
+      </div>
+      <p style="font-size: 0.8rem; margin-top: 10px; text-align: center;">Pilot program success demonstrated</p>
+    </div>
+
+    <!-- Block 6: Recommendation -->
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Recommendation</h3>
+      <ul>
+        <li>Pilot was successful expand program nationwide</li>
+        <li>More investment needed to grow OLED market</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHART SECTION -->
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">
+        <h2>
+          <i class="fas fa-chart-bar"></i>
+          TV Screen Technology Availability in Australia
+        </h2>
+        <p>Distribution of different screen technologies in the Australian TV market</p>
+      </div>
+    </div>
+    <div class="responsive-svg-container"></div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Chooi Joo Lun | Assistance from GenAI</p>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script>
+  function goHome() {
+    window.location.href = "index.html";
+  }
+
+  // Data: LED=167, LCD=115, OLED=10
+  const tvTechData = [
+    { Technology: "LCD", Count: 115, color: "#10b981" },
+    { Technology: "LED", Count: 167, color: "#3b82f6" },
+    { Technology: "OLED", Count: 10, color: "#f59e0b" }
+  ];
+
+  function createBarChart() {
+    const margin = { top: 50, right: 30, bottom: 70, left: 70 };
+    const width = 1000 - margin.left - margin.right;
+    const height = 500 - margin.top - margin.bottom;
+
+    const container = d3.select(".responsive-svg-container");
+    container.html("");
+    
+    const svg = container
+      .append("svg")
+      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+      .style("width", "100%")
+      .style("height", "auto")
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const data = [...tvTechData].sort((a, b) => b.Count - a.Count);
+
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.Technology))
+      .range([0, width])
+      .padding(0.35);
+
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.Count) + 20])
+      .range([height, 0]);
+
+    // X Axis
+    svg.append("g")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x).tickSize(8))
+      .selectAll("text")
+      .style("font-size", "14px")
+      .style("font-weight", "bold")
+      .style("fill", "#1e3a8a");
+
+    // Y Axis
+    svg.append("g")
+      .call(d3.axisLeft(y).ticks(8))
+      .style("font-size", "13px")
+      .style("fill", "#334155");
+
+    // Y Axis Label
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2)
+      .attr("y", -50)
+      .style("font-size", "14px")
+      .style("font-weight", "bold")
+      .style("fill", "#1e3a8a")
+      .style("text-anchor", "middle")
+      .text("Number of Models");
+
+    // Tooltip
+    const tooltip = d3.select("body")
+      .append("div")
+      .style("position", "absolute")
+      .style("background", "#0a3d62")
+      .style("color", "white")
+      .style("padding", "10px 16px")
+      .style("border-radius", "8px")
+      .style("font-size", "13px")
+      .style("pointer-events", "none")
+      .style("z-index", "100")
+      .style("box-shadow", "0 2px 10px rgba(0,0,0,0.2)")
+      .style("opacity", 0);
+
+    const total = data.reduce((sum, d) => sum + d.Count, 0);
+
+    // Draw bars - NO labels on top of bars
+    svg.selectAll(".bar")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", d => x(d.Technology))
+      .attr("width", x.bandwidth())
+      .attr("y", height)
+      .attr("height", 0)
+      .attr("fill", d => d.color)
+      .attr("rx", 4)
+      .on("mouseover", function(event, d) {
+        d3.select(this).transition().duration(200).attr("opacity", 0.8);
+        const percentage = ((d.Count / total) * 100).toFixed(1);
+        tooltip.transition().duration(200).style("opacity", 0.95);
+        tooltip.html(`
+          <strong>${d.Technology}</strong><br/>
+          Models: ${d.Count}<br/>
+          Market Share: ${percentage}%
+        `)
+          .style("left", (event.pageX + 15) + "px")
+          .style("top", (event.pageY - 40) + "px");
+      })
+      .on("mouseout", function() {
+        d3.select(this).transition().duration(200).attr("opacity", 1);
+        tooltip.transition().duration(200).style("opacity", 0);
+      })
+      .transition()
+      .duration(800)
+      .delay((d, i) => i * 150)
+      .attr("y", d => y(d.Count))
+      .attr("height", d => height - y(d.Count));
+  }
+
+  createBarChart();
+
+  window.addEventListener('resize', function() {
+    createBarChart();
+  });
+</script>
+
+</body>
+</html>

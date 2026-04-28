@@ -5,7 +5,11 @@ Welcome to **Exercise 0.2** for COS30045 Data Visualisation.
 
 In this exercise, you will build a simple **Energy Data Webpage** using **HTML, CSS, and JavaScript**. The purpose of this exercise is to familiarise you with the development workflow using **GitHub and VS Code**, while preparing the foundation for future data visualisation tasks.
 
+<<<<<<< HEAD
 ---
+=======
+4. Reflection: It was especially useful for debugging and ensuring all requirements were met. However, I   still needed to review and modify the code make it suitable for my assignment
+>>>>>>> a5e80c29b2dbc19691be12a86117b75986d6a42c
 
 # Objective
 
