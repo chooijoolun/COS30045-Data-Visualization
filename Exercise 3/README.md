@@ -1,10 +1,13 @@
 Documentation of AI Use in Code
 
-1. Introduction: The project required AI to help me assist until it   meet all assignment requirements.
-2. Tool Description: The project used ChatGPT as its AI tool which is developed by OpenAI.
+1. Introduction: This project used AI assistance to support development and help to understanding the code.
 
-3. Usage Details: My code needs to be tested for its compliance with the assignment requirements.
+2. Tool Description
+The project employed Claude and Chatgpt as its primary AI tool throughout its duration.
 
-4. Reflection: It was especially useful for debugging and ensuring all requirements were met. However, I   still needed to review and modify the code make it suitable for my assignment
+3. Usage Details
+AI assisted with the development process by creating structural elements and conducting debugging work on HTML and CSS and JavaScript code.
 
-5. Acknowledgment: The project requires code that AI assistance provided through ChatGPT which OpenAI developed. My final work contains elements from AI because I used it to enhance my code and verify its accuracy.
+4. Reflection: I personally made all final decisions about design elements and data selection and storytelling structure which I then approved after reviewing each decision. I used AI as my educational resource to learn about the operation of specific coding elements.
+
+5. Acknowledgment: The project code includes sections that were created with the help of AI. The student reviewed the final submission which they modified before their approval to confirm that it met the assignment standards.
