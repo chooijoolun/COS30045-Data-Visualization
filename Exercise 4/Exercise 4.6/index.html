@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.6: Scaling Charts</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Exercise 4.6: Scaling Charts</h1>
+    <p>A responsive bar chart demonstrating <code>d3.scaleLinear()</code> and <code>d3.scaleBand()</code> with padding.</p>
+
+    <div class="responsive-svg-container"></div>
+
+    <script>
+        // Sample dataset representing electronic/TV brand counts matching your exercise parameters
+        const dataset = [
+            { brand: "Apple", count: 1310 },
+            { brand: "Samsung", count: 1120 },
+            { brand: "Sony", count: 850 },
+            { brand: "LG", count: 720 },
+            { brand: "TCL", count: 550 },
+            { brand: "Hisense", count: 410 },
+            { brand: "Panasonic", count: 280 },
+            { brand: "Vizio", count: 150 },
+            { brand: "Philips", count: 90 },
+            { brand: "Sharp", count: 40 }
+        ];
+
+        // 1. Setup the SVG container with the requested responsive viewBox
+        const svg = d3.select(".responsive-svg-container")
+            .append("svg")
+            .attr("viewBox", "0 0 500 1600") // Width: 500, Height: 1600
+            .style("border", "1px solid black")
+            .style("width", "100%")       // Forces SVG to scale with container width
+            .style("height", "auto");     // Maintains aspect ratio automatically
+
+        function createBarChart(data) {
+            
+            // Step 1: Linear scale for continuous count data (X-Axis)
+            // Maps counts (0 to 1310) across the SVG viewBox width layout (0 to 500)
+            const xScale = d3.scaleLinear()
+                .domain([0, 1310])
+                .range([0, 500]);
+
+            // Step 2: Band scale for categorical brand data (Y-Axis)
+            // Maps discrete brand names across the SVG viewBox height layout (0 to 1600)
+            const yScale = d3.scaleBand()
+                .domain(data.map(d => d.brand))
+                .range([0, 1600])
+                .padding(0.2); // Adds a 20% gap between bars to fix overlapping issues
+
+            // Step 3: Bind data and render the rectangles
+            svg.selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                // Position each bar vertically according to its brand category mapping
+                .attr("y", d => yScale(d.brand))
+                // Use the band scale's calculated uniform height per item
+                .attr("height", yScale.bandwidth())
+                // Ensure all horizontal bars align against the left edge
+                .attr("x", 0)
+                // Use the linear scale to determine the visual pixel width based on the data count
+                .attr("width", d => xScale(d.count))
+                // Aesthetic styling color
+                .attr("fill", "teal");
+        }
+
+        // Initialize and generate the chart
+        createBarChart(dataset);
+    </script>
+</body>
+</html>

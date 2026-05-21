@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.responsive-svg-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1200px;
+}

@@ -1,0 +1,77 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Responsive container styling */
+        .responsive-svg-container {
+            width: 100%;
+            max-width: 600px; /* Limits maximum width on large screens */
+            margin: 20px 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Optional: Add hover effect to the bars */
+        rect {
+            transition: fill 0.2s ease;
+        }
+        rect:hover {
+            fill: #004d40; /* Darker teal on hover */
+        }
+
+                body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 24px; }
+        header p { margin: 5px 0 0 0; opacity: 0.9; }
+        
+        /* Responsive Grid Layout for Charts */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        /* SVG Wrapper to make charts scale with window resizing */
+        .chart-container {
+            width: 100%;
+            height: auto;
+            margin-top: 15px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }

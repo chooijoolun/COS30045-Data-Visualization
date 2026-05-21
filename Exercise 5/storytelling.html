@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>StoryTelling | Energy Appliances</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images/PowerIcon.png" type="image/png">
+   <!-- CSS -->
+  <link rel="stylesheet" href="css/storytelling.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo" onclick="goHome()" title="Go to Home">
+    <img src="images/PowerIcon.png" alt="Power Logo">
+    <span class="logo-text">Energy Appliances</span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="televisions.html">Televisions</a></li>
+      <li><a href="about.html">About Us</a></li>
+
+      <li class="nav-dropdown" id="storyDropdown">
+        <a href="storytelling.html" class="active">
+          StoryTelling
+          <i class="fas fa-chevron-down caret"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-label">Jump to topic</li>
+          <li>
+            <a href="#section-tech" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#dbeafe;">
+                <i class="fas fa-tv" style="color:#3b82f6;"></i>
+              </span>
+              TV Screen Technology Availability
+            </a>
+          </li>
+          <li>
+            <a href="#section-sizes" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#dcfce7;">
+                <i class="fas fa-tags" style="color:#10b981;"></i>
+              </span>
+              Number of Models by Brand
+            </a>
+          </li>
+          <li>
+            <a href="#section-power" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#fee2e2;">
+                <i class="fas fa-bolt" style="color:#ef4444;"></i>
+              </span>
+              Average Power Consumption
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div id="section-tech" class="scroll-target"></div>
+
+  <!-- Topic 1:  TV Screen Technology Availability -->
+  <div class="topic-banner topic-banner-1">
+    <div class="topic-banner-inner">
+      <span class="topic-banner-num">Topic 01</span>
+      <div class="topic-banner-icon"><i class="fas fa-tv"></i></div>
+      <div class="topic-banner-text">
+        <h2>TV Screen Technology Availability</h2>
+        <p>Analysing LED, LCD &amp; OLED distribution in the Australian market</p>
+      </div>
+      <span class="topic-banner-badge">&#127462;&#127482; Australia Market</span>
+    </div>
+  </div>
+
+  <div class="storyboard">
+    <div class="story-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Issue</h3>
+      <p>Limited variety of TV screen technologies in the Australian market, especially for OLED.</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-area"></i> Demonstrate Issue</h3>
+        <ul>
+          <li>LED dominates with 167 models </li>
+          <li>LCD holds 115 models </li>
+          <li>OLED has only 10 models </li>
+          <li>OLED is 17× fewer than LED</li>
+        </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-lightbulb"></i> Ideas for Overcoming</h3>
+      <ul>
+        <li>Encourage production of more OLED models</li>
+        <li>Introduce mid-range OLED options</li>
+        <li>Increase consumer awareness of OLED benefits</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-rocket"></i> Pilot Program</h3>
+      <p><strong>Goals:</strong></p>
+      <ul>
+        <li>Stock more OLED models</li>
+        <li>Offer discounts or promotions</li>
+        <li>Educate customers in-store</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Before and After Data</h3>
+      <div class="comparison-inline">
+        <div class="before-stat">
+          <div class="stat-value">10 models</div>
+          <div class="stat-label">OLED models (Before)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">Low sales</div>
+        </div>
+        <div class="after-stat">
+          <div class="stat-value">+35 models</div>
+          <div class="stat-label">OLED models (After)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">+78% sales</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;margin-top:10px;text-align:center;">Pilot program success demonstrated</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Recommendation</h3>
+      <ul>
+        <li>Pilot was successful — expand program nationwide</li>
+        <li>More investment needed to grow OLED market</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">
+        <h2><i class="fas fa-chart-bar"></i> TV Screen Technology Availability in Australia</h2>
+        <p>Distribution of different screen technologies in the Australian TV market</p>
+      </div>
+    </div>
+    <div class="responsive-svg-container" id="chart1-container"></div>
+  </div>
+
+   <!-- Topic 2: Number of Models by Brand -->
+  <div id="section-sizes" class="scroll-target"></div>
+
+  <div class="topic-banner topic-banner-2">
+    <div class="topic-banner-inner">
+      <span class="topic-banner-num">Topic 02</span>
+      <div class="topic-banner-icon"><i class="fas fa-tags"></i></div>
+      <div class="topic-banner-text">
+        <h2>Number of Models by Brand</h2>
+        <p>Comparing model count across the top TV brands in the Australian market</p>
+      </div>
+      <span class="topic-banner-badge">&#127462;&#127482; Australia Market</span>
+    </div>
+  </div>
+
+  <div class="storyboard">
+    <div class="story-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Issue</h3>
+      <p>The Australian TV market is heavily dominated by LG and Samsung, leaving smaller brands with far fewer models and limited consumer choice.</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-area"></i> Demonstrate Issue</h3>
+      <ul>
+        <li>LG: 637 models — market leader</li>
+        <li>Samsung: 449 models — close second</li>
+        <li>Kogan: 195, Eko: 170, Hisense: 148</li>
+        <li>Top 2 brands hold over 68% of total models</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-lightbulb"></i> Ideas for Overcoming</h3>
+      <ul>
+        <li>Encourage smaller brands to expand their model range</li>
+        <li>Provide shelf space incentives for emerging brands</li>
+        <li>Promote brand diversity to reduce market concentration</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-rocket"></i> Pilot Program</h3>
+      <p><strong>Goals:</strong></p>
+      <ul>
+        <li>Partner with Kogan, Eko &amp; Hisense to expand model range</li>
+        <li>Offer promotional placement for smaller brands</li>
+        <li>Run consumer awareness campaigns for alternative brands</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Before and After Data</h3>
+      <div class="comparison-inline">
+        <div class="before-stat">
+          <div class="stat-value">68%</div>
+          <div class="stat-label">Top 2 brand share (Before)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">Low diversity</div>
+        </div>
+        <div class="after-stat">
+          <div class="stat-value">52%</div>
+          <div class="stat-label">Top 2 brand share (After)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">+40% diversity</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;margin-top:10px;text-align:center;">Pilot program success demonstrated</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Recommendation</h3>
+      <ul>
+        <li>Invest in growing Kogan, Eko &amp; Hisense model ranges</li>
+        <li>Reduce over-reliance on LG and Samsung</li>
+        <li>Create a more competitive and diverse brand ecosystem</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">
+        <h2><i class="fas fa-chart-bar"></i> Number of Models by Brand</h2>
+        <p>Count of TV models per brand in the Australian market</p>
+      </div>
+    </div>
+    <div class="responsive-svg-container" id="chart2-container"></div>
+  </div>
+
+   <!-- Topic 3: Average Power Consumption -->
+  <div id="section-power" class="scroll-target"></div>
+
+  <div class="topic-banner topic-banner-3">
+    <div class="topic-banner-inner">
+      <span class="topic-banner-num">Topic 03</span>
+      <div class="topic-banner-icon"><i class="fas fa-bolt"></i></div>
+      <div class="topic-banner-text">
+        <h2>Average Power Consumption by Screen Technology</h2>
+        <p>Comparing passive &amp; active standby power (Watts) across LCD, LCD (LED), Plasma &amp; OLED</p>
+      </div>
+      <span class="topic-banner-badge">&#9889; Energy Analysis</span>
+    </div>
+  </div>
+
+  <div class="storyboard">
+    <div class="story-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Issue</h3>
+      <p>Plasma TVs consume dramatically more active standby power (13.33W) compared to all other screen technologies, raising serious energy efficiency concerns.</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-area"></i> Demonstrate Issue</h3>
+      <ul>
+        <li>Plasma active standby: <strong>13.333W</strong> — highest by far</li>
+        <li>OLED active standby: 4.198W</li>
+        <li>LCD: 0.717W &amp; LCD (LED): 0.7W — most efficient</li>
+        <li>Passive standby is low across all types (≤0.401W)</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-lightbulb"></i> Ideas for Overcoming</h3>
+      <ul>
+        <li>Phase out Plasma TVs in favour of LCD or LED models</li>
+        <li>Promote energy-efficient LCD (LED) technology</li>
+        <li>Introduce energy star ratings at point of sale</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-rocket"></i> Pilot Program</h3>
+      <p><strong>Goals:</strong></p>
+      <ul>
+        <li>Replace Plasma stock with LCD (LED) alternatives</li>
+        <li>Display power consumption labels on all TV models</li>
+        <li>Offer rebates for customers switching to energy-efficient TVs</li>
+      </ul>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Before and After Data</h3>
+      <div class="comparison-inline">
+        <div class="before-stat">
+          <div class="stat-value">13.33W</div>
+          <div class="stat-label">Plasma active standby (Before)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">High energy use</div>
+        </div>
+        <div class="after-stat">
+          <div class="stat-value">0.7W</div>
+          <div class="stat-label">LCD (LED) active standby (After)</div>
+          <div class="stat-value" style="font-size:1rem;margin-top:8px;">–95% energy</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;margin-top:10px;text-align:center;">Pilot program success demonstrated</p>
+    </div>
+    <div class="story-card">
+      <h3><i class="fas fa-chart-line"></i> Recommendation</h3>
+      <ul>
+        <li>Discontinue Plasma TV stocking nationwide</li>
+        <li>Mandate energy consumption labels for all TVs</li>
+        <li>Prioritise LCD (LED) and OLED in future procurement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chart-section" style="margin-bottom:2rem;">
+    <div class="chart-header">
+      <div class="chart-title">
+        <h2><i class="fas fa-chart-bar"></i> Average Power Consumption by Screen Technology</h2>
+        <p>Mean passive standby vs active standby power (Watts) per screen technology type</p>
+      </div>
+    </div>
+    <div class="responsive-svg-container" id="chart3-container"></div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div>LCD</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div>LCD (LED)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div>Plasma</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div>OLED</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Chooi Joo Lun | Assistance from GenAI</p>
+</footer>
+
+<!-- d3.js -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- UI & navigation -->
+<script src="js/script.js"></script>
+
+<!-- d3 chart initialisation -->
+<script src="js/d3.js"></script>
+
+</body>
+</html>
