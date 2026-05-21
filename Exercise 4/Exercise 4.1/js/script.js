@@ -23,27 +23,6 @@ svg.append("rect")
   .attr("width", W).attr("height", 120)
   .attr("fill", "#4a7c3f");
 
-// ── SUN ─────────────────────────────────────────────────
-
-// Sun body (circle)
-svg.append("circle")
-  .attr("cx", 580).attr("cy", 70)
-  .attr("r", 38)
-  .attr("fill", "#FFD700");
-
-// Sun rays — d3.range() generates angle array
-const rayAngles = d3.range(0, 360, 45);
-rayAngles.forEach(angle => {
-  const rad = angle * Math.PI / 180;
-  svg.append("line")
-    .attr("x1", 580 + Math.cos(rad) * 45)
-    .attr("y1",  70 + Math.sin(rad) * 45)
-    .attr("x2", 580 + Math.cos(rad) * 58)
-    .attr("y2",  70 + Math.sin(rad) * 58)
-    .attr("stroke", "#FFD700")
-    .attr("stroke-width", 2.5)
-    .attr("stroke-linecap", "round");
-});
 
 // ── GARDEN PATH ─────────────────────────────────────────
 
@@ -100,19 +79,6 @@ house.append("rect")
   .attr("width", 24).attr("height", 50)
   .attr("fill", "#6B3410");
 
-// Smoke puffs (ellipses)
-const smokePuffs = [
-  { cx: 152, cy: 32, rx: 9,  ry: 7,   opacity: 0.70 },
-  { cx: 160, cy: 20, rx: 6,  ry: 5,   opacity: 0.55 },
-  { cx: 154, cy: 11, rx: 4,  ry: 3.5, opacity: 0.40 },
-];
-smokePuffs.forEach(s => {
-  house.append("ellipse")
-    .attr("cx", s.cx).attr("cy", s.cy)
-    .attr("rx", s.rx).attr("ry", s.ry)
-    .attr("fill", "white")
-    .attr("opacity", s.opacity);
-});
 
 // Door (rect)
 house.append("rect")

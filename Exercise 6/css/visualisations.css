@@ -1,0 +1,29 @@
+/* Histogram bars */
+.bar {
+    opacity: 0.85;
+}
+.bar:hover {
+    opacity: 1;
+}
+
+/* Bar chart transition */
+.bar-rect {
+    transition: fill 0.3s ease;
+}
+
+/* Axis labels */
+.axis-label {
+    font-size: 12px;
+    fill: #333;
+}
+
+/* Scatterplot dots */
+.dot {
+    transition: opacity 0.2s ease;
+}
+
+/* Legend */
+.legend-text {
+    font-size: 12px;
+    fill: #333;
+}

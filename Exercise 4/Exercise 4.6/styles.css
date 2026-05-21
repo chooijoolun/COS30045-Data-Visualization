@@ -17,13 +17,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Optional: Add hover effect to the bars */
-        rect {
-            transition: fill 0.2s ease;
-        }
-        rect:hover {
-            fill: #004d40; /* Darker teal on hover */
-        }
 
                 body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -22,7 +22,7 @@ svg
     .append("text")
     .attr("x", 80)
     .attr("y", 60)
-    .text("Energy Consumption Example")
+    .text("D3 set up svg rectangle")
     .style("font-size", "24px")
     .style("font-family", "Arial")
     .style("font-weight", "bold")
