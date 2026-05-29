@@ -15,3 +15,5 @@ d3.csv("data/Ex6_TVdata.csv").then(data => {
     handleMouseEvents();     
 
 }).catch(err => console.error("Error loading CSV file metrics: ", err));
+
+

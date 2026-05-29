@@ -73,9 +73,9 @@ function updateHistogram(techId, rawData) {
         .duration(400)
         .call(d3.axisBottom(xScale));
 
-    // ==========================================
-    // CRITICAL FIX FOR SCATTERPLOT FILTERING
-    // ==========================================
+
+    //  FOR SCATTERPLOT FILTERING
+ 
     // Update visibility of scatterplot circles based on the active button filter
     innerChartS.selectAll(".dot")
         .transition()
@@ -93,7 +93,7 @@ function createTooltip() {
     tooltipG = innerChartS.append("g")
         .attr("class", "tooltip")
         .style("opacity", 0)
-        .style("pointer-events", "none"); // Prevents tooltip flickering if cursor overlaps it
+        .style("pointer-events", "none"); 
 
     // Tooltip Base Plate
     tooltipG.append("rect")

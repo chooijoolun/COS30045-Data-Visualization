@@ -1,29 +1,34 @@
-// Create SVG canvas
-const svg = d3.select(".responsive-svg-container")
-    .append("svg")
-    .attr("viewBox", "0 0 1200 300")
-    .style("background-color", "#f8f9fa")
-    .style("border", "2px solid #ccc")
-    .style("border-radius", "12px");
+/* UI & navigation logic */
 
-// Add improved rectangle
-svg
-    .append("rect")
-    .attr("x", 80)
-    .attr("y", 80)
-    .attr("width", 700)
-    .attr("height", 40)
-    .attr("rx", 10) // rounded corners
-    .attr("ry", 10)
-    .attr("fill", "#2563eb");
+// Navigate to home 
+function goHome() {
+  window.location.href = "index.html";
+}
 
-// Optional title text
-svg
-    .append("text")
-    .attr("x", 80)
-    .attr("y", 60)
-    .text("D3 set up svg rectangle")
-    .style("font-size", "24px")
-    .style("font-family", "Arial")
-    .style("font-weight", "bold")
-    .style("fill", "#333");
+// Dropdown menu logic
+const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", function (e) {
+    if (e.target.closest(".dropdown-menu")) return;
+
+    const shouldOpen = !this.classList.contains("open");
+    dropdowns.forEach((item) => item.classList.remove("open"));
+
+    if (shouldOpen) {
+      this.classList.add("open");
+    }
+
+    e.preventDefault();
+  });
+});
+
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".nav-dropdown")) {
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
+  }
+});
+
+function closeDropdown() {
+  dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
+}

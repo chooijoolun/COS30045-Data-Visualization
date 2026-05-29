@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Draw | Exercise 4.5</title>
+  <link rel="icon" href="images/PowerIcon.png" type="image/png">
+  <link rel="stylesheet" href="css/draw.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo" onclick="goHome()" title="Go to Home">
+    <img src="images/PowerIcon.png" alt="Power Logo">
+    <span class="logo-text">Energy Appliances</span>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="televisions.html">Televisions</a></li>
+      <li><a href="about.html">About Us</a></li>
+
+      <li class="nav-dropdown" id="exerciseDropdown">
+        <a href="loaddata.html">
+          Exercise 4
+          <i class="fas fa-chevron-down caret"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-label">Exercises</li>
+          <li>
+            <a href="svg.html">
+              <span class="topic-icon" style="background:#dcfce7;">
+                <i class="fas fa-vector-square" style="color:#10b981;"></i>
+              </span>
+              Exercise 4.1 - Draw SVGs
+            </a>
+          </li>
+          <li>
+            <a href="svgrectangle.html">
+              <span class="topic-icon" style="background:#dbeafe;">
+                <i class="fas fa-square" style="color:#3b82f6;"></i>
+              </span>
+              Exercise 4.3 - D3 Rectangle
+            </a>
+          </li>
+          <li>
+            <a href="loaddata.html">
+              <span class="topic-icon" style="background:#fce7f3;">
+                <i class="fas fa-file-csv" style="color:#db2777;"></i>
+              </span>
+              Exercise 4.4 - Load Data
+            </a>
+          </li>
+          <li>
+            <a href="draw.html" class="active">
+              <span class="topic-icon" style="background:#ede9fe;">
+                <i class="fas fa-pen-ruler" style="color:#8b5cf6;"></i>
+              </span>
+              Exercise 4.5 - Draw
+            </a>
+          </li>
+          <li>
+            <a href="scalinglabels.html">
+              <span class="topic-icon" style="background:#fef3c7;">
+                <i class="fas fa-up-right-and-down-left-from-center" style="color:#d97706;"></i>
+              </span>
+              Exercise 4.6 - Scaling Labels
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown" id="storyDropdown">
+        <a href="storytelling.html">
+          StoryTelling
+          <i class="fas fa-chevron-down caret"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-label">Jump to topic</li>
+          <li>
+            <a href="storytelling.html#section-tech" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#dbeafe;">
+                <i class="fas fa-tv" style="color:#3b82f6;"></i>
+              </span>
+              TV Screen Technology Availability
+            </a>
+          </li>
+          <li>
+            <a href="storytelling.html#section-sizes" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#dcfce7;">
+                <i class="fas fa-tags" style="color:#10b981;"></i>
+              </span>
+              Number of Models by Brand
+            </a>
+          </li>
+          <li>
+            <a href="storytelling.html#section-power" onclick="closeDropdown()">
+              <span class="topic-icon" style="background:#fee2e2;">
+                <i class="fas fa-bolt" style="color:#ef4444;"></i>
+              </span>
+              Average Power Consumption
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>D3 Drawing with Data</h1>
+  <p class="subtitle">This chart uses data binding to turn an array into bars.</p>
+  <div class="chart-wrap">
+    <svg id="chart" viewBox="0 0 900 500" aria-label="Bar chart showing sample data"></svg>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Chooi Joo Lun | Assistance from GenAI</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/d3draw.js"></script>
+
+
+</body>
+</html>

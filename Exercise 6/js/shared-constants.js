@@ -20,7 +20,7 @@ const binGenerator = d3.bin()
     .value(d => d.energyConsumption)
     .thresholds(25); 
 
-// --- Exercise 6.2 Global Scatterplot Placeholders ---
+// --- Global Scatterplot Placeholders ---
 let innerChartS;
 let xScaleS;
 let yScaleS;
